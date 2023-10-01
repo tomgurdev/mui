@@ -18,6 +18,10 @@ const theme = createTheme({
       main: '#11ff00',
       light: '#a4ff9d',
     },
+    error: {
+      main: '#ff0000',
+      light: '#ff8a80',
+    },
   },
 });
 export default theme;
