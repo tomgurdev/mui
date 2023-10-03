@@ -1,5 +1,4 @@
 import {Avatar, AvatarGroup, Box, ImageList, ImageListItem, Typography} from "@mui/material";
-import {alignProperty} from "@mui/material/styles/cssUtils";
 
 function srcset(image: string, size: number, rows = 1, cols = 1) {
   return {
