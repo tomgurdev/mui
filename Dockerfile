@@ -6,4 +6,4 @@ WORKDIR /opt/app
 RUN npm install --save react react-dom react-scripts -g
 RUN npm install
 EXPOSE 3000
-ENTRYPOINT ["npm" , "start"]
+ENTRYPOINT ["npm" , "run","start"]
