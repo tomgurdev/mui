@@ -1,4 +1,4 @@
-FROM node:20
+FROM node:18
 MAINTAINER "Tom Gur"
 RUN mkdir -p /opt/app
 COPY . /opt/app
