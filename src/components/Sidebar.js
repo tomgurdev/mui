@@ -26,17 +26,17 @@ const Sidebar = () => {
             </ListItemIcon>
             <ListItemText primary="Quotes"/>
           </ListItemButton>
-          <ListItemButton component={"a"} href={"#groups"}>
-            <ListItemIcon>
-              <Group/>
-            </ListItemIcon>
-            <ListItemText primary="Groups"/>
-          </ListItemButton>
           <ListItemButton component={"a"} href={"/market"}>
             <ListItemIcon>
               <Storefront/>
             </ListItemIcon>
             <ListItemText primary="Market"/>
+          </ListItemButton>
+          <ListItemButton component={"a"} href={"#groups"}>
+            <ListItemIcon>
+              <Group/>
+            </ListItemIcon>
+            <ListItemText primary="Groups"/>
           </ListItemButton>
           <ListItemButton component={"a"} href={"#friends"}>
             <ListItemIcon>

@@ -59,56 +59,37 @@ function Navbar() {
               "&:hover": { color: theme.palette.primary.light, "&:active": {color: theme.palette.secondary.light} }
             }}/>
             <Avatar onClick={e => setMenuOpen(true)}
-                    src={"https://mir-s3-cdn-cf.behance.net/project_modules/disp/ea7a3c32163929.567197ac70bda.png"}
-                    sx={{height: 30, width: 30, display: "flex"}}/>
+                    src={"static/images/middle-finger-svgrepo-com.svg"}
+                    sx={{height: 30, width: 30, display: "flex", backgroundColor: "white"}}/>
           </Icons>
           <UserBox onClick={e => setMenuOpen(true)}>
             <Typography variant="span">Tom</Typography>
             <Avatar
-              src={"https://www.gagebeasleyshop.com/cdn/shop/articles/iStock-847144522_1200x1200.jpg?v=1656922321"}
-              sx={{height: 30, width: 30, display: "flex"}}/>
+              src={"static/images/middle-finger-svgrepo-com.svg"}
+              sx={{height: 30, width: 30, display: "flex", backgroundColor: "white"}}/>
           </UserBox>
         </StyledToolbar>
         <Menu
-          id="demo-positioned-menu"
-          aria-labelledby="demo-positioned-button"
-          open={menuOpen}
-          onClose={e => setMenuOpen(false)}
+          id="nav-menu"
+          open={navOpen}
+          onClose={e => setNavOpen(false)}
           anchorOrigin={{
             vertical: 'top',
-            horizontal: 'right',
+            horizontal: 'left',
           }}
           transformOrigin={{
             vertical: 'top',
-            horizontal: 'right',
+            horizontal: 'left',
           }}
         >
-          <MenuItem>Profile</MenuItem>
-          <MenuItem>My account</MenuItem>
-          <MenuItem>Logout</MenuItem>
-        </Menu>
-      <Menu
-        id="nav-menu"
-        open={navOpen}
-        onClose={e => setNavOpen(false)}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-      >
-        <List>
-          <MenuItem href={"/"}> Home </MenuItem>
-          <MenuItem href={"/quotes"}> Quotes </MenuItem>
-          <MenuItem href={"/market"}> Market </MenuItem>
-        </List>
+          <List>
+            <MenuItem href={"/"}> Home </MenuItem>
+            <MenuItem href={"/quotes"}> Quotes </MenuItem>
+            <MenuItem href={"/market"}> Market </MenuItem>
+          </List>
       </Menu>
     </AppBar>
-  )
-    ;
+  );
 }
 
 export default Navbar;
