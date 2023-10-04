@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppBar, Avatar, Badge, Box, InputBase, Menu, MenuItem, styled, Toolbar, Typography} from "@mui/material";
+import {AppBar, Avatar, Badge, Box, InputBase, List, Menu, MenuItem, styled, Toolbar, Typography} from "@mui/material";
 import {Pets} from "@mui/icons-material";
 import MarkunreadIcon from '@mui/icons-material/Markunread';
 import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
@@ -33,34 +33,30 @@ const UserBox = styled(Box)(({theme}) => ({
 }));
 
 const StyledToolbar = styled(Toolbar)(({theme}) => ({
-  // display: "flex",
   justifyContent: "space-between",
   p: 2,
 }));
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [navOpen, setNavOpen] = React.useState(false);
   return (
     <AppBar>
         <StyledToolbar>
           <Typography variant="h6" sx={{display: {xs: "none", sm: "block"}}}>פרצוף תחת</Typography>
-          <Pets sx={{display: {xs: "block", sm: "none"}}}/>
+          <Pets sx={{display: {xs: "block", sm: "none"}}} onClick={() => setNavOpen(true)}/>
           <Search sx={{display: {xs: "none", sm: "block"}}}>
             <InputBase placeholder={"Search"} id={"search"}></InputBase>
           </Search>
           <Icons>
             <Badge badgeContent={2} color={"error"}>
               <MarkunreadIcon sx={{
-                "&:hover": {
-                  color: theme.palette.primary.light,
-                  "&:active": {color: theme.palette.secondary.light}
-                }
+                "&:hover": { color: theme.palette.primary.light},
+                "&:active": {color: theme.palette.secondary.light}
               }}/>
             </Badge>
             <SettingsApplicationsIcon sx={{
-              "&:hover": {
-                color: theme.palette.primary.light, "&:active": {color: theme.palette.secondary.light}
-              }
+              "&:hover": { color: theme.palette.primary.light, "&:active": {color: theme.palette.secondary.light} }
             }}/>
             <Avatar onClick={e => setMenuOpen(true)}
                     src={"https://mir-s3-cdn-cf.behance.net/project_modules/disp/ea7a3c32163929.567197ac70bda.png"}
@@ -91,6 +87,25 @@ function Navbar() {
           <MenuItem>My account</MenuItem>
           <MenuItem>Logout</MenuItem>
         </Menu>
+      <Menu
+        id="nav-menu"
+        open={navOpen}
+        onClose={e => setNavOpen(false)}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+        <List>
+          <MenuItem href={"/"}> Home </MenuItem>
+          <MenuItem href={"/quotes"}> Quotes </MenuItem>
+          <MenuItem href={"/market"}> Market </MenuItem>
+        </List>
+      </Menu>
     </AppBar>
   )
     ;
