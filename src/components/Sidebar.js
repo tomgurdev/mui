@@ -10,21 +10,21 @@ const Sidebar = () => {
       mr:2}}>
       <Box position="fixed">
         <List
-          sx={{width: '100%', maxWidth: 360,}}
+          sx={{maxWidth: "lg",}}
           component="nav"
           aria-labelledby="nested-list-subheader"
         >
-          <ListItemButton component={"a"} href={"#home"}>
+          <ListItemButton component={"a"} href={"/"}>
             <ListItemIcon>
               <Home/>
             </ListItemIcon>
             <ListItemText primary="Home"/>
           </ListItemButton>
-          <ListItemButton component={"a"} href={"#pages"}>
+          <ListItemButton component={"a"} href={"/quotes"}>
             <ListItemIcon>
               <AutoStories/>
             </ListItemIcon>
-            <ListItemText primary="Pages"/>
+            <ListItemText primary="Quotes"/>
           </ListItemButton>
           <ListItemButton component={"a"} href={"#groups"}>
             <ListItemIcon>
@@ -32,7 +32,7 @@ const Sidebar = () => {
             </ListItemIcon>
             <ListItemText primary="Groups"/>
           </ListItemButton>
-          <ListItemButton component={"a"} href={"#marketplace"}>
+          <ListItemButton component={"a"} href={"/market"}>
             <ListItemIcon>
               <Storefront/>
             </ListItemIcon>
