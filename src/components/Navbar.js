@@ -4,6 +4,7 @@ import {Pets} from "@mui/icons-material";
 import MarkunreadIcon from '@mui/icons-material/Markunread';
 import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
 import theme from "../theme";
+import MenuListComposition from "./SmallMenu";
 
 
 const Search = styled("div")(({theme}) => ({
@@ -82,11 +83,7 @@ function Navbar() {
             horizontal: 'left',
           }}
         >
-          <List>
-            <MenuItem href={"/"}> Home </MenuItem>
-            <MenuItem href={"/quotes"}> Quotes </MenuItem>
-            <MenuItem href={"/market"}> Market </MenuItem>
-          </List>
+          <MenuListComposition/>
       </Menu>
     </AppBar>
   );

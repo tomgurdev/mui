@@ -60,7 +60,9 @@ const Sidebar = () => {
             <ListItemIcon>
               <Brightness2/>
             </ListItemIcon>
-            <Switch defaultChecked={false} sx={{color: theme.palette.primary.main}}/>
+            <Box sx={{display:"flex", alignItems: "left", alignContent:"left"}}>
+              <Switch id={"darkModeSwitch"} defaultChecked={false} sx={{color: theme.palette.primary.main}}/>
+            </Box>
           </ListItemButton>
         </List>
       </Box>

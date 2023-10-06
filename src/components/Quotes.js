@@ -2,12 +2,13 @@ import * as React from 'react';
 import {useState} from 'react';
 import {Button, Stack, styled, Typography} from "@mui/material";
 import {TextareaAutosize} from '@mui/base/TextareaAutosize';
+import MenuIntroduction from "./CatagoryDropDown";
 
 
 export default function Quotes() {
   const [quote, setQuote] = useState(""); // State for the quote
   const [author, setAuthor] = useState(""); // State for the author
-  const [category, setCategory] = useState(""); // State for the author
+  const [category, setCategory] = useState(""); // State for the category
   const blue = {
     100: '#DAECFF',
     200: '#b6daff',
@@ -37,7 +38,12 @@ export default function Quotes() {
 
   async function fetchRandomQuote() {
     try {
-      const response = await fetch('https://go-backend.tomgur.me:8080/random-quote');
+      const hasCategory = category !== "";
+      const url = hasCategory?`https://go-backend.tomgur.me:8080/random-quote?category=${category.toLowerCase()}`:'https://go-backend.tomgur.me:8080/random-quote'
+      console.log("hasCategory: " + hasCategory)
+      console.log("category: ", category)
+      console.log("url: ", url)
+      const response = await fetch(url);
       const data = await response.json();
       console.info("quote: " + data.QUOTE)
       console.info("author: " + data.AUTHOR)
@@ -103,12 +109,15 @@ export default function Quotes() {
         </Typography>
         <StyledComponent label={"Category"} placeholder={"Category"} value={category} onChange={handleQuoteChange} sx={{width:'85%'}}/>
       </Stack>
-      <Button
-        variant="contained"
-        sx={{ marginTop: 2 }}
-        onClick={fetchRandomQuote}>
-        Get Random Quote
-      </Button>
+      <Stack direction={"row"} sx={{display: "flex", alignItems: "center", alignContent: "center"}}>
+        <Button
+          variant="contained"
+          sx={{ marginTop: 2, marginRight: 2, display: "flex" }}
+          onClick={fetchRandomQuote}>
+          Get Random Quote
+        </Button>
+        <MenuIntroduction />
+      </Stack>
     </Stack>
   );
 }
