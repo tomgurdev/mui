@@ -5,5 +5,6 @@ COPY . /opt/app
 WORKDIR /opt/app
 RUN npm install --save react react-dom react-scripts react-router-dom react-router -g
 RUN npm install
+RUN npm run build
 EXPOSE 443
 ENTRYPOINT ["node" , "server.js"]
