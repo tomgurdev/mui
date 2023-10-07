@@ -11,11 +11,13 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
 
 function Rightbar() {
   return (
-    <Box flex={2} p={2} marginTop={7} sx={{
+    <Box flex={1} p={2} marginTop={7} sx={{
       display: {xs: "none",
       sm: "block"},
+      marginRight: 3,
+      justifyItems: "center",
     }}>
-      <Box position={"fixed"}>
+      <Box>
         <Typography variant="h6" fontWeight={100}>Online Friends</Typography>
         <AvatarGroup max={4} style={{
           alignItems: "left",

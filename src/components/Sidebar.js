@@ -5,14 +5,13 @@ import theme from "../theme";
 const Sidebar = () => {
   return (
       <Box flex={1} p={2} mt={5} sx={{
-      display: {xs: "none",
-                sm: "block"},
-      mr:2}}>
-      <Box position="fixed">
+        display: {xs: "none", sm: "block"},
+        position: "sticky",
+      }}>
+      <Box>
         <List
           sx={{maxWidth: "lg",}}
           component="nav"
-          aria-labelledby="nested-list-subheader"
         >
           <ListItemButton component={"a"} href={"/"}>
             <ListItemIcon>

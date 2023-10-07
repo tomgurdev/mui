@@ -43,27 +43,28 @@ function Navbar() {
   const [navOpen, setNavOpen] = React.useState(false);
   return (
     <AppBar>
-        <StyledToolbar>
+        <StyledToolbar sx={{
+          display: "flex",
+        }}>
           <Typography variant="h6" sx={{display: {xs: "none", sm: "block"}}}>פרצוף תחת</Typography>
-          <Pets sx={{display: {xs: "block", sm: "none"}}} onClick={() => setNavOpen(true)}/>
+          <Pets sx={{display: {xs: "block", sm: "none"}, marginLeft:2}} onClick={() => setNavOpen(true)} />
           <Search sx={{display: {xs: "none", sm: "block"}}}>
             <InputBase placeholder={"Search"} id={"search"}></InputBase>
           </Search>
           <Icons>
             <Badge badgeContent={2} color={"error"}>
               <MarkunreadIcon sx={{
-                "&:hover": { color: theme.palette.primary.light},
-                "&:active": {color: theme.palette.secondary.light}
+                "&:hover": { color: theme.palette.primary.light}, "&:active": {color: theme.palette.secondary.light}
               }}/>
             </Badge>
             <SettingsApplicationsIcon sx={{
               "&:hover": { color: theme.palette.primary.light, "&:active": {color: theme.palette.secondary.light} }
             }}/>
-            <Avatar onClick={e => setMenuOpen(true)}
+            <Avatar onClick={e => setMenuOpen(true) }
                     src={"static/images/middle-finger-svgrepo-com.svg"}
-                    sx={{height: 30, width: 30, display: "flex", backgroundColor: "white"}}/>
+                    sx={{height: 30, width: 30, display: "flex", backgroundColor: "white", marginRight:5}}/>
           </Icons>
-          <UserBox onClick={e => setMenuOpen(true)}>
+          <UserBox onClick={e => setMenuOpen(true)} sx={{ marginRight:4 }}>
             <Typography variant="span">Tom</Typography>
             <Avatar
               src={"static/images/middle-finger-svgrepo-com.svg"}
